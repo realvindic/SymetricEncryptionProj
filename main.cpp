@@ -1,26 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "char2bytes.h"
-#include "config.h"
-#include <math.h>
 #include "cryptoTools.h"
-int encrypt(){
-    char msg[20];
-    scanf("%s",msg);
-    int len = strlen(msg);
-    BYTE arr[len];
-    string2ByteArray(msg,arr);
+#include "char2bytes.h"
+int encrypt(char *msg,int len){
     int i;
     for(i=0;i<len;i++){
-        double emsg = crypto(privatekey,arr[i]);
-        printf("%lf \n",emsg);
+        printf("%lf - %d\n",crypto(msg[i]),msg[i]);
+        double dmsg = decrypto(crypto(msg[i]));
+        printf("%lf \n",dmsg);
     }
 }
-int decrypt(int len){
+int decrypt(char *emsg,int len){
     int i;
     for(i=0;i<len;i++){
-        decrypto(getchar(),privatekey);
+        decrypto(emsg[i]);
     }
 }
 int main(){
+    char text[20];
+    scanf("%s",text);
+    int len = strlen(text);
+    BYTE arr[len];
+    int i;
+    string2ByteArray(text,arr);
+    encrypt(text,len);
 }
