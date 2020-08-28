@@ -42,15 +42,15 @@ rand2 = random.random();
 x = [randomPoint(rand1,rand2),randomPoint(rand1,rand2),randomPoint(rand1,rand2),randomPoint(rand1,rand2)];
 y = [randomPoint(rand1,rand2),randomPoint(rand1,rand2),randomPoint(rand1,rand2),randomPoint(rand1,rand2)];
 enc = [""] * 100;
-def traploop(enc,x):
+def traploop(enc,x,y):
     for i in range(0,2):
         if(i > 1):
-            enc[i] = (enc[i - 1] + trapdoor(x[i],x[i+1]));
+            enc[i] = (enc[i - 1] + trapdoor(x[i],y[i+1]));
         else:
             enc[i] = trapdoor(x[i],x[i + 1]);
     return(enc);
 print(trapdoor(y[i],x[i]));
-traploop(enc,x);
+traploop(enc,x,y);
 plt.plot(x,y);
 plt.show()
 input();
