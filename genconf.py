@@ -37,10 +37,8 @@ i = 0;
 test = [20,30,40];
 ii = 0;
 random.seed(t);
-rand1 = random.random();
-rand2 = random.random();
-x = [randomPoint(rand1,rand2),randomPoint(rand1,rand2),randomPoint(rand1,rand2),randomPoint(rand1,rand2)];
-y = [randomPoint(rand1,rand2),randomPoint(rand1,rand2),randomPoint(rand1,rand2),randomPoint(rand1,rand2)];
+x = [randomPoint(random.random(),random.random()),randomPoint(random.random(),random.random()),randomPoint(random.random(),random.random()),randomPoint(random.random(),random.random())];
+y = [randomPoint(random.random(),random.random()),randomPoint(random.random(),random.random()),randomPoint(random.random(),random.random()),randomPoint(random.random(),random.random())];
 enc = [""] * 100;
 def traploop(enc,x,y):
     for i in range(0,2):
@@ -51,7 +49,7 @@ def traploop(enc,x,y):
     return(enc);
 print(trapdoor(y[i],x[i]));
 traploop(enc,x,y);
-plt.plot(x,y);
+plt.plot(x,y,y);
 plt.show()
 input();
 os.system("clear");
