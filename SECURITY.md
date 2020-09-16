@@ -7,7 +7,7 @@ currently being supported with security updates.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 2.0   | :green_check_mark: |
+| 2.0   | :wight_check_mark: |
 
 ## Reporting a Vulnerability
 
