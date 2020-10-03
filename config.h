@@ -1,1 +1,0 @@
-double privatekey = 627939204.9940675;
